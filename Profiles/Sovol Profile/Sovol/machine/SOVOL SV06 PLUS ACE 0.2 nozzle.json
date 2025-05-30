@@ -13,11 +13,11 @@
 	],
 	"printable_area": [
 		"0x0",
-		"220x0",
-		"220x220",
-		"0x220"
+		"300x0",
+		"300x300",
+		"0x300"
 	],
-	"printable_height": "250",
+	"printable_height": "350",
 	"thumbnails": [
 		"96x96",
 		"160x160"

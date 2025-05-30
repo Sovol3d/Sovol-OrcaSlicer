@@ -74,6 +74,9 @@
 	"z_hop": [
         "0.6"
     ],
+    "travel_slope": [
+        "2"
+    ],
 	"retraction_speed": [
         "40"
     ],

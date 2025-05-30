@@ -494,6 +494,10 @@
             "sub_path": "filament/SOVOL SV08 MAX PLA.json"
         },
         {
+            "name": "SOVOL SV08 MAX Silk PLA - Hardened Steel",
+            "sub_path": "filament/SOVOL SV08 MAX Silk PLA - Hardened Steel.json"
+        },
+        {
             "name": "SOVOL SV08 MAX ABS",
             "sub_path": "filament/SOVOL SV08 MAX ABS.json"
         },

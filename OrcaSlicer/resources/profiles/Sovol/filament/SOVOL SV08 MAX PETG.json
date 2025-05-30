@@ -11,12 +11,12 @@
         "15"
     ],
     "enable_pressure_advance": "1",
-    "pressure_advance": "0.62",
+    "pressure_advance": "0.048",
 	"nozzle_temperature_initial_layer": [
         "265"
     ],
 	"nozzle_temperature": [
-        "245"
+        "255"
     ],
     "nozzle_temperature_range_low": [
         "230"
@@ -31,10 +31,10 @@
         "80"
     ],
 	"fan_min_speed": [
-        "50"
+        "30"
     ],
     "fan_max_speed": [
-        "70"
+        "50"
     ],
 	"fan_cooling_layer_time": [
         "30"
