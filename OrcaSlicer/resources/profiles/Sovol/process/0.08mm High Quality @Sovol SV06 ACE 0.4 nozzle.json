@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "GP004",
-	"name": "0.08mm High Quality @Sovol SV06 ACE",
+	"name": "0.08mm High Quality @SOVOL SV06 ACE 0.4 nozzle",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -121,6 +121,6 @@
 	"accel_to_decel_enable": "0",
 	"thick_bridges": "1",
 	"compatible_printers": [
-		"Sovol SV06 ACE 0.4 nozzle"
+		"SOVOL SV06 ACE 0.4 nozzle"
 	]
 }

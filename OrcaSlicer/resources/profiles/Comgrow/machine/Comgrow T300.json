@@ -1,7 +1,7 @@
 {
     "type": "machine_model",
     "name": "Comgrow T300",
-    "model_id": "Comgrow_T300",
+    "model_id": "Comgrow-T300",
     "nozzle_diameter": "0.4",
     "machine_tech": "FFF",
     "family": "Comgrow",

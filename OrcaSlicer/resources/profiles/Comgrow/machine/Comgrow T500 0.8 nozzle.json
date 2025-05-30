@@ -4,14 +4,20 @@
   "name": "Comgrow T500 0.8 nozzle",
   "from": "system",
   "instantiation": "true",
-  "inherits": "fdm_comgrow_common",
+  "inherits": "Comgrow T500 Base",
   "printer_model": "Comgrow T500",
   "printer_variant": "0.8",
   "retraction_length": [
-    "1.0"
+    "3"
   ],
   "nozzle_diameter": [
     "0.8"
+  ],
+  "max_layer_height": [
+    "0.56"
+  ],
+  "min_layer_height": [
+    "0.16"
   ],
   "printable_area": [
     "0x0",

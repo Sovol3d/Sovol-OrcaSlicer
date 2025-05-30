@@ -1,12 +1,12 @@
 {
 	"type": "machine",
 	"setting_id": "GM001",
-	"name": "Sovol SV06 Plus 0.4 nozzle",
+	"name": "SOVOL SV06 PLUS 0.4 nozzle",
 	"from": "system",
 	"instantiation": "true",
 	"inherits": "fdm_machine_common",
-	"printer_model": "Sovol SV06 Plus",
-	"default_print_profile": "0.20mm Standard @Sovol SV06Plus",
+	"printer_model": "SOVOL SV06 PLUS",
+	"default_print_profile": "0.20mm Standard @SOVOL SV06PLUS",
 	"nozzle_diameter": [
 		"0.4"
 	],
@@ -81,7 +81,7 @@
 	"min_layer_height": [
 		"0.07"
 	],
-	"printer_settings_id": "Sovol",
+	"printer_settings_id": "SOVOL",
 	"retraction_minimum_travel": [
 		"0.5"
 	],
@@ -104,10 +104,9 @@
 	"change_filament_gcode": "M600\nG1 E0.4 F1500 ; prime after color change",
 	"machine_pause_gcode": "M601",
 	"default_filament_profile": [
-		"Generic PLA @System"
+		"SOVOL SV06 PLUS PLA"
 	],
-	"machine_start_gcode": "G90 ; use absoulte coordinates\nM83 ; extruder relative mode\n\nM104 S150 ; set nozzle temp to 150\n\nG28 ; home all axes\nM420 S1 ;load mesh\n\nM140 S[bed_temperature_initial_layer_single] ; set bed temp\nM190 S[bed_temperature_initial_layer_single] ; wait for bed temp to stabilize\nM104 S[nozzle_temperature_initial_layer] ; set final extruder temp\nM109 S[nozzle_temperature_initial_layer] ; wait for extruder temp\n\nG1 X0.1 Y10 Z5.0 F1500 ; move to start position\nG1 Z0.26 F150 ; Move lower\nG4 S0.5 ; wait 0.5 seconds\n\nG1 X0.1 Y150 Z0.3 F1500 E10 ; prime the nozzle\nG1 X0.3 F1500\nG1 X0.4 Y15 Z0.3 F1500 E15 ; prime the nozzle\nG4 S0.1 ; wait 0.1 seconds\n\nG1 Z0.6 F150 ; lift nozzle\nG92 E0 ; Reset Extruder\nG1 Z2 F150 ; lift nozzle more\n",
-	"machine_end_gcode": "M117 READY\n\nG1 E0 F1000 ; reset extruder\n\nG91 ; relative positioning\nG1 Z2 F1000 ; lift nozzle\n\nG90 ; absolute positioning\nG27 P2 ; park extruder\n\nM140 S0 ; turn off heatbed\nM104 S0 ; turn off temperature\nM107 ; turn off fan\nM84 X Y E ; disable motors",
+	"machine_start_gcode": "G28\nG90\nG1 X0 Y0 F12000\nG1 Z0.300 F600\nM140 S[bed_temperature_initial_layer_single] ;set bed temp\nM190 S[bed_temperature_initial_layer_single] ;wait for bed temp\nM104 S[nozzle_temperature_initial_layer] ;set extruder temp\nM109 S[nozzle_temperature_initial_layer];wait for extruder temp\n{if first_layer_print_min[1] - 6 > print_bed_min[1]}\nG90\nM83\nG1 E-0.1 F600\nG1 X{first_layer_print_min[0]} Y{first_layer_print_min[1] - 5} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\nG1 X{first_layer_print_min[0] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_min[0] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\nG1 Z1 F600\nG1 X{first_layer_print_min[0]} Y{first_layer_print_min[1] - 4} F12000\nG1 Z0.3 F600 ;Move to start position\nG1 E0.200 F600\nG1 X{first_layer_print_min[0] + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_min[0] + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 F600\nG1 Z5 F600\nM400\n{else}\nG90\nM83\nG1 E-0.300 Z3 F600\nG1 X{first_layer_print_max[0] / 3} F{outer_wall_volumetric_speed * 5 * 30}\nG1 Z0.3 F600\nG1 E0.300 F600\nG1 X{first_layer_print_max[0] / 3 + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_max[0] / 3 + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_max[0] / 3} Y1 F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_max[0] / 3 + 5 * 6} E{5 * 0.24 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 X{first_layer_print_max[0] / 3 + 5 * 6 * 2} E{5 * 0.16 * 6}  F{outer_wall_volumetric_speed * 5 * 30}\nG1 E-0.100 Z3 F600\nM400\n{endif}\n\n",
 	"before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\nG92 E0.0\n;[layer_z]\n\n",
 	"layer_change_gcode": ";AFTER_LAYER_CHANGE\n;[layer_z]",
 	"scan_first_layer": "0"

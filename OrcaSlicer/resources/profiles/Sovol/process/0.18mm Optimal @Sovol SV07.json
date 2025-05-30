@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "GP004",
-	"name": "0.18mm Optimal @Sovol SV07",
+	"name": "0.18mm Optimal @SOVOL SV07",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -23,7 +23,7 @@
 	"top_surface_acceleration": "0",
 	"bridge_no_support": "0",
 	"draft_shield": "disabled",
-	"elefant_foot_compensation": "0.1",
+	"elefant_foot_compensation": "0",
 	"enable_arc_fitting": "0",
 	"exclude_object": "0",
 	"outer_wall_line_width": "0.42",
@@ -85,7 +85,7 @@
 	"support_object_xy_distance": "60%",
 	"tree_support_branch_angle": "40",
 	"tree_support_wall_count": "0",
-	"detect_thin_wall": "1",
+	"detect_thin_wall": "0",
 	"top_surface_pattern": "monotonic",
 	"top_surface_line_width": "0.38",
 	"top_shell_layers": "5",
@@ -105,6 +105,6 @@
 	"xy_hole_compensation": "0",
 	"xy_contour_compensation": "0",
 	"compatible_printers": [
-		"Sovol SV07 0.4 nozzle"
+		"SOVOL SV07 0.4 nozzle"
 	]
 }

@@ -2,24 +2,28 @@
 	"type": "filament",
 	"filament_id": "GFL99",
 	"setting_id": "GFSA04",
-	"name": "Sovol SV07 PLA",
+	"name": "SOVOL SV07 PLA",
 	"from": "system",
 	"instantiation": "true",
-	"inherits": "Generic PLA @System",
-	"filament_flow_ratio": ["0.98"],
-	"filament_max_volumetric_speed": ["24"],
-	"filament_retraction_length": ["0.5"],
+	"inherits": "fdm_filament_pla",
+	"filament_flow_ratio": ["0.95"],
+	"filament_max_volumetric_speed": ["21"],
+    "enable_pressure_advance": "1",
+    "pressure_advance": "0.016",
 	"full_fan_speed_layer": [
         "3"
     ],
 	"compatible_printers": [
-		"Sovol SV07 0.4 nozzle"
+		"SOVOL SV07 0.4 nozzle",
+        "SOVOL SV07 0.6 nozzle",
+        "SOVOL SV07 0.8 nozzle",
+        "SOVOL SV07 1.0 nozzle"
 	],
 	"fan_min_speed": [
-        "60"
+        "100"
     ],
 	"fan_cooling_layer_time": [
-        "50"
+        "80"
     ],
 	"fan_max_speed": [
         "100"
@@ -27,11 +31,14 @@
 	"slow_down_layer_time": [
         "6"
     ],
+    "slow_down_min_speed": [
+        "20"
+    ],
 	"nozzle_temperature_initial_layer": [
-        "235"
+        "220"
     ],
 	"nozzle_temperature": [
-        "200"
+        "220"
     ],
     "nozzle_temperature_range_low": [
         "190"
