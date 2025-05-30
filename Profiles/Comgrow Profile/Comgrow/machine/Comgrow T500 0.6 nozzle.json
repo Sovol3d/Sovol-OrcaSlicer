@@ -1,0 +1,29 @@
+{
+  "type": "machine",
+  "setting_id": "GM002",
+  "name": "Comgrow T500 0.6 nozzle",
+  "from": "system",
+  "instantiation": "true",
+  "inherits": "Comgrow T500 Base",
+  "printer_model": "Comgrow T500",
+  "printer_variant": "0.6",
+  "retraction_length": [
+    "0.5"
+  ],
+  "nozzle_diameter": [
+    "0.6"
+  ],
+  "max_layer_height": [
+    "0.48"
+  ],
+  "min_layer_height": [
+    "0.30"
+  ],
+  "printable_area": [
+    "0x0",
+    "500x0",
+    "500x500",
+    "0x500"
+  ],
+  "printable_height": "500"
+}

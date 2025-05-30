@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "SOVOL ZERO",
+    "model_id": "SOVOL-ZERO",
+    "nozzle_diameter": "0.4",
+    "machine_tech": "FFF",
+    "family": "SOVOL",
+    "bed_model": "sovol_150_150_buildplate_model.stl",
+    "bed_texture": "sovol_buildplate_texture.png",
+    "hotend_model": "",
+	"default_materials": "SOVOL ZERO PLA - Brass;SOVOL ZERO Silk PLA - Brass;SOVOL ZERO PLA - Hardened Steel;SOVOL ZERO Silk PLA - Hardened Steel;SOVOL ZERO ABS;SOVOL ZERO PETG - Brass;SOVOL ZERO PETG - Hardened Steel;SOVOL ZERO TPU;SOVOL ZERO PC"    
+}

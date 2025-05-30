@@ -1,0 +1,126 @@
+{
+	"name": "Comgrow",
+	"version": "01.09.00.02",
+	"force_update": "0",
+	"description": "Comgrow configurations",
+	"machine_model_list": [
+		{
+			"name": "Comgrow T300 Clay",
+			"sub_path": "machine/Comgrow T300 Clay.json"
+		},
+		{
+			"name": "Comgrow T300",
+			"sub_path": "machine/Comgrow T300.json"
+		},
+		{
+			"name": "Comgrow T500",
+			"sub_path": "machine/Comgrow T500.json"
+		}		
+	],
+	"process_list": [
+		{
+			"name": "fdm_process_common",
+			"sub_path": "process/fdm_process_common.json"
+		},
+		{
+			"name": "fdm_process_comgrow_common",
+			"sub_path": "process/fdm_process_comgrow_common.json"
+		},{
+			"name": "0.60mm Optimal @Comgrow T300 Clay 3.0 nozzle",
+			"sub_path": "process/0.60mm Optimal @Comgrow T300 Clay 3.0 nozzle.json"
+		},
+		{
+			"name": "0.20mm Optimal @Comgrow T300",
+			"sub_path": "process/0.20mm Optimal @Comgrow T300 0.4.json"
+		},
+		{
+			"name": "0.20mm Standard @Comgrow T500",
+			"sub_path": "process/0.20mm Standard @Comgrow T500 0.4.json"
+		},
+		{
+			"name": "0.30mm Optimal @Comgrow T500",
+			"sub_path": "process/0.30mm Optimal @Comgrow T500 0.6.json"
+		},
+		{
+			"name": "0.40mm Optimal @Comgrow T500",
+			"sub_path": "process/0.40mm Optimal @Comgrow T500 0.8.json"
+		},
+		{
+			"name": "0.50mm Optimal @Comgrow T500",
+			"sub_path": "process/0.50mm Optimal @Comgrow T500 1.0.json"
+		}
+		
+	],
+	"filament_list": [
+		{
+			"name": "fdm_filament_common",
+			"sub_path": "filament/fdm_filament_common.json"
+		},
+		{
+			"name": "fdm_filament_pla",
+			"sub_path": "filament/fdm_filament_pla.json"
+		},
+		{
+			"name": "fdm_filament_pet",
+			"sub_path": "filament/fdm_filament_pet.json"
+		},
+		{
+			"name": "fdm_filament_abs",
+			"sub_path": "filament/fdm_filament_abs.json"
+		},
+		{
+			"name": "fdm_filament_tpu",
+			"sub_path": "filament/fdm_filament_tpu.json"
+		},
+		{
+			"name": "Comgrow T300 PLA",
+			"sub_path": "filament/Comgrow T300 PLA.json"
+		},
+		{
+			"name": "Comgrow T300 Clay PLA",
+			"sub_path": "filament/Comgrow T300 Clay PLA.json"
+		},
+		{
+			"name": "Comgrow T500 PLA",
+			"sub_path": "filament/Comgrow T500 PLA.json"
+		}
+	],
+	"machine_list": [
+		{
+			"name": "fdm_machine_common",
+			"sub_path": "machine/fdm_machine_common.json"
+		},
+		{
+			"name": "fdm_comgrow_common",
+			"sub_path": "machine/fdm_comgrow_common.json"
+		},
+		{
+			"name": "Comgrow T300 0.4 nozzle",
+			"sub_path": "machine/Comgrow T300 0.4 nozzle.json"
+		},
+		{
+			"name": "Comgrow T300 Clay 3.0 nozzle",
+			"sub_path": "machine/Comgrow T300 Clay 3.0 nozzle.json"
+		},
+		{
+			"name": "Comgrow T500 Base",
+			"sub_path": "machine/Comgrow T500 Base.json"
+		},
+		{
+			"name": "Comgrow T500 0.4 nozzle",
+			"sub_path": "machine/Comgrow T500 0.4 nozzle.json"
+		},
+		{
+			"name": "Comgrow T500 0.6 nozzle",
+			"sub_path": "machine/Comgrow T500 0.6 nozzle.json"
+		},
+		{
+			"name": "Comgrow T500 0.8 nozzle",
+			"sub_path": "machine/Comgrow T500 0.8 nozzle.json"
+		},
+		{
+			"name": "Comgrow T500 1.0 nozzle",
+			"sub_path": "machine/Comgrow T500 1.0 nozzle.json"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "SOVOL SV08",
+    "model_id": "SOVOL-SV08",
+    "nozzle_diameter": "0.4;0.2;0.6;0.8",
+    "machine_tech": "FFF",
+    "family": "SOVOL",
+    "bed_model": "sovol_350_350_buildplate_model.stl",
+    "bed_texture": "sovol_sv08_buildplate_texture.png",
+    "hotend_model": "",
+	"default_materials": "SOVOL SV08 PLA;SOVOL SV08 PLA @SV08 0.2 nozzle;SOVOL SV08 ABS;SOVOL SV08 PETG;SOVOL SV08 TPU"    
+}

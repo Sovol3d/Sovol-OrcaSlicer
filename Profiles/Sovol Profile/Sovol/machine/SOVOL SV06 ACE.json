@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "SOVOL SV06 ACE",
+    "model_id": "SOVOL-SV06-ACE",
+    "nozzle_diameter": "0.2;0.4;0.6;0.8",
+    "machine_tech": "FFF",
+    "family": "SOVOL",
+    "bed_model": "sovol_sv06_ace_buildplate_model.stl",
+    "bed_texture": "sovol_buildplate_texture.png",
+    "hotend_model": "",
+	"default_materials": "SOVOL SV06 ACE PLA;SOVOL SV06 ACE ABS;SOVOL SV06 ACE PETG;SOVOL SV06 ACE TPU"
+}

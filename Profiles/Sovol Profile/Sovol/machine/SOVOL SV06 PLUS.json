@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "SOVOL SV06 PLUS",
+    "model_id": "SOVOL-SV06-PLUS",
+    "nozzle_diameter": "0.4",
+    "machine_tech": "FFF",
+    "family": "SOVOL",
+    "bed_model": "sovol_300_300_buildplate_model.stl",
+    "bed_texture": "sovol_buildplate_texture.png",
+    "hotend_model": "",
+	"default_materials": "SOVOL SV06 PLUS PLA"
+}
