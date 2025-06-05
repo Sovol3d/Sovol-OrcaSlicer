@@ -247,8 +247,8 @@ public:
     //static const double plate_x_gap = 0.2;
     ThumbnailData thumbnail_data;
     ThumbnailData no_light_thumbnail_data;
-    static const int plate_thumbnail_width = 512;
-    static const int plate_thumbnail_height = 512;
+    static const int plate_thumbnail_width = 256;
+    static const int plate_thumbnail_height = 256;
 
     ThumbnailData top_thumbnail_data;
     ThumbnailData pick_thumbnail_data;

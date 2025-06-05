@@ -2826,7 +2826,7 @@ void SelectMachineDialog::on_send_print()
         catch (...) {}
         BOOST_LOG_TRIVIAL(info) << "print_job: m_print_plate_idx =" << m_print_job->m_print_from_sdc_plate_idx;
 
-        auto input_str_arr = wxGetApp().split_str(m_required_data_file_name, ".gcode.3mf");
+        auto input_str_arr = wxGetApp().split_str(m_required_data_file_name, ".3mf");
         if (input_str_arr.size() <= 1) {
             input_str_arr = wxGetApp().split_str(m_required_data_file_name, ".3mf");
             if (input_str_arr.size() > 1) {

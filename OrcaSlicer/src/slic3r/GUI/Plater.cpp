@@ -159,7 +159,7 @@ using Slic3r::Preset;
 using Slic3r::GUI::format_wxstr;
 using namespace nlohmann;
 
-static const std::pair<unsigned int, unsigned int> THUMBNAIL_SIZE_3MF = { 512, 512 };
+static const std::pair<unsigned int, unsigned int> THUMBNAIL_SIZE_3MF = { 256, 256 };
 
 namespace Slic3r {
 namespace GUI {
@@ -11694,7 +11694,7 @@ void Plater::export_gcode_3mf(bool export_all)
         show_error(this, ex.what(), false);
         return;
     }
-    default_output_file.replace_extension(".gcode.3mf");
+    default_output_file.replace_extension(".3mf");
     default_output_file = fs::path(Slic3r::fold_utf8_to_ascii(default_output_file.string()));
 
     //Get a last save path

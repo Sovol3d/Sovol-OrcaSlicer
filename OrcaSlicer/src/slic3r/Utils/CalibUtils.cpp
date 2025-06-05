@@ -1075,7 +1075,7 @@ bool CalibUtils::process_and_store_3mf(Model *model, const DynamicPrintConfig &f
         colors_out.push_back(new_color);
 
         ThumbnailData* thumbnail_data = &plate_data_list[0]->plate_thumbnail;
-        unsigned int thumbnail_width = 512, thumbnail_height = 512;
+        unsigned int thumbnail_width = 256, thumbnail_height = 256;
         const ThumbnailsParams thumbnail_params = {{}, false, true, true, true, 0};
         GLShaderProgram* shader = wxGetApp().get_shader("thumbnail");
 

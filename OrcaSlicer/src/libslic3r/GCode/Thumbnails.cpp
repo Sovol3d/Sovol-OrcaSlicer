@@ -123,7 +123,7 @@ int ColPic_EncodeStr(unsigned short* fromcolor16, int picw, int pich, unsigned c
 
 std::unique_ptr<CompressedImageBuffer> compress_thumbnail_colpic(const ThumbnailData &data)
 {
-    const int MAX_SIZE = 512;
+    const int MAX_SIZE = 256;
     int width = int(data.width);
     int height = int(data.height);
 
