@@ -506,6 +506,14 @@
             "sub_path": "filament/SOVOL SV08 MAX PETG.json"
         },
         {
+            "name": "SOVOL SV08 MAX PETG - PolyMaker",
+            "sub_path": "filament/SOVOL SV08 MAX PETG - polymaker.json"
+        },
+        {
+            "name": "SOVOL SV08 MAX PETG - SUNLU",
+            "sub_path": "filament/SOVOL SV08 MAX PETG - sunlu.json"
+        },
+        {
             "name": "SOVOL SV08 MAX TPU",
             "sub_path": "filament/SOVOL SV08 MAX TPU.json"
         },

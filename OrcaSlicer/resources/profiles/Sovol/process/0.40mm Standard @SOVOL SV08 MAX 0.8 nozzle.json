@@ -137,8 +137,9 @@
 	"top_bottom_infill_wall_overlap": "25%",
 	"filter_out_gap_fill": "0",
 	"detect_narrow_internal_solid_infill": "1",
-	"additional_cooling_fan_speed": "0",
-	"thick_bridges": "1",
+	"additional_cooling_fan_speed": "0",	
+	"thick_bridges": "0",	
+	"thick_internal_bridges":"0",
 	"bridge_angle": "0",
 	"post_process": [],
 	"compatible_printers": [
