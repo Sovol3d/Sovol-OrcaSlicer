@@ -11,7 +11,7 @@
     "0.6"
   ],
   "use_relative_e_distances": "0",
-  "gcode_flavor": "Klipper",
+  "gcode_flavor": "klipper",
   "printable_area": [
     "0x0",
     "220x0",

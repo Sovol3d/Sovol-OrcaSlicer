@@ -55,7 +55,7 @@
 	"seam_position": "aligned",
 	"staggered_inner_seams": "1",
 	"seam_gap": "5%",
-	"seam_slope_type": "contour",
+	"seam_slope_type": "none",
 	"seam_slope_conditional": "1",
 	"seam_slope_start_height": "50%",
 	"seam_slope_entire_loop": "1",
@@ -132,7 +132,7 @@
 	"skirt_speed": "0",
 	"gcode_label_objects": "1",
 	"exclude_object": "1",
-	"wall_direction": "clockwise",
+	"wall_direction": "auto",
 	"filename_format": "{printer_model}_{input_filename_base}_{filament_type[0]}_{layer_height}_{print_time}.gcode",
     "compatible_printers": [
         "SOVOL SV07 0.8 nozzle"
