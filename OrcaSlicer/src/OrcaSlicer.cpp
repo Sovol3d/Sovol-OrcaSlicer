@@ -1184,7 +1184,7 @@ int CLI::run(int argc, char **argv)
     }
 
     global_begin_time = (long long)Slic3r::Utils::get_current_time_utc();
-    BOOST_LOG_TRIVIAL(warning) << boost::format("cli mode, Current OrcaSlicer Version %1%")%SLIC3R_VERSION;
+    BOOST_LOG_TRIVIAL(warning) << boost::format("cli mode, Current SovolSlicer Version %1%")%SLIC3R_VERSION;
 
     //BBS: add plate data related logic
     PlateDataPtrs plate_data_src;
@@ -5485,7 +5485,7 @@ int CLI::run(int argc, char **argv)
                                     BOOST_LOG_TRIVIAL(info) << boost::format("Line %1%: regenerate thumbnail, Skip plate %2%.")%__LINE__%(i+1);
                                 }
                                 else {
-                                    unsigned int thumbnail_width = 512, thumbnail_height = 512;
+                                    unsigned int thumbnail_width = 256, thumbnail_height = 256;
                                     const ThumbnailsParams thumbnail_params = {{}, false, true, true, true, i};
 
                                     BOOST_LOG_TRIVIAL(info) << boost::format("plate %1%'s thumbnail, need to regenerate")%(i+1);
@@ -5537,7 +5537,7 @@ int CLI::run(int argc, char **argv)
                                     plate_data->no_light_thumbnail_file.clear();
                                 }
                                 else {
-                                    unsigned int thumbnail_width = 512, thumbnail_height = 512;
+                                    unsigned int thumbnail_width = 256, thumbnail_height = 256;
                                     const ThumbnailsParams thumbnail_params = { {}, false, true, false, true, i };
 
                                     BOOST_LOG_TRIVIAL(info) << boost::format("plate %1%'s no_light_thumbnail_file missed, need to regenerate")%(i+1);
@@ -5611,7 +5611,7 @@ int CLI::run(int argc, char **argv)
                                     plate_data->pick_file.clear();
                                 }
                                 else {
-                                    unsigned int thumbnail_width = 512, thumbnail_height = 512;
+                                    unsigned int thumbnail_width = 256, thumbnail_height = 256;
                                     const ThumbnailsParams thumbnail_params = { {}, false, true, false, true, i };
 
                                     BOOST_LOG_TRIVIAL(info) << boost::format("plate %1%'s top/pick thumbnail missed, need to regenerate, objects count %2%, skip_useless_pick %3%")%(i+1) %plate_object_count[i] %skip_useless_pick;

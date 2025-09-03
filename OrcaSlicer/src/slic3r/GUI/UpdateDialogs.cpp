@@ -100,7 +100,7 @@ MsgUpdateConfig::MsgUpdateConfig(const std::vector<Update> &updates, bool force_
 	auto  title = force_before_wizard ? _L("Configuration update") : _L("Configuration update");
 	SetTitle(title);
 
-	std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+	std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
     SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
     SetBackgroundColour(*wxWHITE);
@@ -142,8 +142,8 @@ MsgUpdateConfig::MsgUpdateConfig(const std::vector<Update> &updates, bool force_
     sizer_button->Add(0, 0, 1, wxEXPAND, 5);
 
 
-	StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed),
-                            std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered), std::pair<wxColour, int>(AMS_CONTROL_BRAND_COLOUR, StateColor::Normal));
+	StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed),
+                            std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered), std::pair<wxColour, int>(AMS_CONTROL_BRAND_COLOUR, StateColor::Normal));
 
     StateColor btn_bg_white(std::pair<wxColour, int>(wxColour(206, 206, 206), StateColor::Pressed),
                             std::pair<wxColour, int>(wxColour(238, 238, 238), StateColor::Hovered),

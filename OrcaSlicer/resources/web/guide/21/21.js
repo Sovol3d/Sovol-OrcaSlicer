@@ -52,6 +52,13 @@ function HandleModelList( pVal )
 		return;
 
     pModel=pVal['model'];
+
+	// 按特定规则排序（Sovol Spixi 排最前，其余按字母顺序）
+	pModel.sort((a, b) => {
+		if (a.vendor === "Sovol") return -1; // Sovol 排前面
+		if (b.vendor !== "Sovol") return 1;
+		return a.vendor.localeCompare(b.vendor); // 其余按字母排序
+	});
 	
 	let nTotal=pModel.length;
 	let ModelHtml={};
@@ -73,16 +80,16 @@ function HandleModelList( pVal )
 				sVV="Orca colosseum";
 
 			let HtmlNewVendor='<div class="OneVendorBlock" Vendor="'+strVendor+'">'+
-'<div class="BlockBanner">'+
-'	<div class="BannerBtns">'+
-'		<div class="SmallBtn_Green trans" tid="t11" onClick="SelectPrinterAll('+"\'"+strVendor+"\'"+')">all</div>'+
-'		<div class="SmallBtn trans" tid="t12" onClick="SelectPrinterNone('+"\'"+strVendor+"\'"+')">none</div>'+
-'	</div>'+
-'	<a>'+sVV+'</a>'+
-'</div>'+
-'<div class="PrinterArea">	'+
-'</div>'+
-'</div>';
+							'<div class="BlockBanner">'+
+							'	<div class="BannerBtns">'+
+							'		<div class="SmallBtn_Green trans" tid="t11" onClick="SelectPrinterAll('+"\'"+strVendor+"\'"+')">all</div>'+
+							'		<div class="SmallBtn trans" tid="t12" onClick="SelectPrinterNone('+"\'"+strVendor+"\'"+')">none</div>'+
+							'	</div>'+
+							'	<a>'+sVV+'</a>'+
+							'</div>'+
+							'<div class="PrinterArea">	'+
+							'</div>'+
+							'</div>';
 			
 			$('#Content').append(HtmlNewVendor);
 		}
@@ -98,13 +105,17 @@ function HandleModelList( pVal )
 		for(let m=0;m<NozzleArray.length;m++)
 		{
 			let nNozzel=NozzleArray[m];
-			HtmlNozzel += '<div class="pNozzel TextS2"><input type="checkbox" model="' + OneModel['model'] + '" nozzel="' + nNozzel + '" vendor="' + strVendor +'" onclick="CheckBoxOnclick(this)" /><span>'+nNozzel+'</span><span class="trans" tid="t13">mm nozzle</span></div>';
+			HtmlNozzel += '<div class="pNozzel TextS2">'+
+						'<input type="checkbox" model="' + OneModel['model'] + '" nozzel="' + nNozzel + '" vendor="' + strVendor +'" onclick="CheckBoxOnclick(this)" />'+
+						'<span>'+nNozzel+'</span>'+
+						'<span class="trans" tid="t13">mm nozzle</span>'+
+						'</div>';
 		}
 		
 		let CoverImage=OneModel['cover'];
 		ModelHtml[strVendor]+='<div class="PrinterBlock">'+
-'	<div class="PImg"><img src="'+CoverImage+'"  /></div>'+
-'    <div class="PName">'+OneModel['model']+'</div>'+ HtmlNozzel +'</div>';
+							'<div class="PImg"><img src="'+CoverImage+'"  /></div>'+
+							'<div class="PName">'+OneModel['model']+'</div>'+ HtmlNozzel +'</div>';
 	}
 	
 	//Update Nozzel Html Append
@@ -259,13 +270,16 @@ function FilterModelList(keyword) {
 		let HtmlNozzel = '';
 		for (let m = 0; m < NozzleArray.length; m++) {
 			let nNozzel = NozzleArray[m];
-			HtmlNozzel += '<div class="pNozzel TextS2"><input type="checkbox" model="' + OneModel['model'] + '" nozzel="' + nNozzel + '" vendor="' + strVendor + '" onclick="CheckBoxOnclick(this)" /><span>' + nNozzel + '</span><span class="trans" tid="t13">mm nozzle</span></div>';
+			HtmlNozzel += '<div class="pNozzel TextS2">'+
+						'<input type="checkbox" model="' + OneModel['model'] + '" nozzel="' + nNozzel + '" vendor="' + strVendor + '" onclick="CheckBoxOnclick(this)" />'+
+						'<span>' + nNozzel + '</span>'+
+						'<span class="trans" tid="t13">mm nozzle</span></div>';
 		}
 
 		let CoverImage = OneModel['cover'];
 		ModelHtml[strVendor] += '<div class="PrinterBlock">' +
-			'	<div class="PImg"><img src="' + CoverImage + '"  /></div>' +
-			'    <div class="PName">' + OneModel['model'] + '</div>' + HtmlNozzel + '</div>';
+							'<div class="PImg"><img src="' + CoverImage + '"  /></div>' +
+							'<div class="PName">' + OneModel['model'] + '</div>' + HtmlNozzel + '</div>';
 	}
 
 	//Update Nozzel Html Append

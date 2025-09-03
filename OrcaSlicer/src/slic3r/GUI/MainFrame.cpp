@@ -153,7 +153,7 @@ static wxIcon main_frame_icon(GUI_App::EAppMode app_mode)
     }
     return wxIcon(path, wxBITMAP_TYPE_ICO);
 #else // _WIN32
-    return wxIcon(Slic3r::var("OrcaSlicer_128px.png"), wxBITMAP_TYPE_PNG);
+    return wxIcon(Slic3r::var("SovolSlicer_128px.png"), wxBITMAP_TYPE_PNG);
 #endif // _WIN32
 }
 
@@ -251,7 +251,7 @@ DPIFrame(NULL, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, BORDERLESS_FRAME_
     default:
     case GUI_App::EAppMode::Editor:
         m_taskbar_icon = std::make_unique<OrcaSlicerTaskBarIcon>(wxTBI_DOCK);
-        m_taskbar_icon->SetIcon(wxIcon(Slic3r::var("OrcaSlicer-mac_256px.ico"), wxBITMAP_TYPE_ICO), "OrcaSlicer");
+        m_taskbar_icon->SetIcon(wxIcon(Slic3r::var("SovolSlicer-mac_256px.ico"), wxBITMAP_TYPE_ICO), "SovolSlicer");
         break;
     case GUI_App::EAppMode::GCodeViewer:
         break;
@@ -1704,6 +1704,28 @@ wxBoxSizer* MainFrame::create_side_tools()
                     p->Dismiss();
                     });
                 
+                SideButton* print_plate_btn = new SideButton(p, _L("Print plate"), "");
+                print_plate_btn->SetCornerRadius(0);
+                print_plate_btn->Bind(wxEVT_BUTTON, [this, p](wxCommandEvent&) {
+                    m_print_btn->SetLabel(_L("Print plate"));
+                    m_print_select = ePrintPlate;
+                    m_print_enable = get_enable_print_status();
+                    m_print_btn->Enable(m_print_enable);
+                    this->Layout();
+                    p->Dismiss();
+                    });
+                
+                // SideButton* send_to_printer_btn = new SideButton(p, _L("Send"), "");
+                // send_to_printer_btn->SetCornerRadius(0);
+                // send_to_printer_btn->Bind(wxEVT_BUTTON, [this, p](wxCommandEvent&) {
+                //     m_print_btn->SetLabel(_L("Send"));
+                //     m_print_select = eSendToPrinter;
+                //     m_print_enable = get_enable_print_status();
+                //     m_print_btn->Enable(m_print_enable);
+                //     this->Layout();
+                //     p->Dismiss();
+                //     });
+                
                 SideButton* export_sliced_file_btn = new SideButton(p, _L("Export plate sliced file"), "");
                 export_sliced_file_btn->SetCornerRadius(0);
                 export_sliced_file_btn->Bind(wxEVT_BUTTON, [this, p](wxCommandEvent&) {
@@ -1716,6 +1738,8 @@ wxBoxSizer* MainFrame::create_side_tools()
                     });
 
                 p->append_button(send_gcode_btn);
+                p->append_button(print_plate_btn);
+                // p->append_button(send_to_printer_btn);
                 p->append_button(export_gcode_btn);
                 p->append_button(export_sliced_file_btn);
             }
@@ -1908,6 +1932,11 @@ bool MainFrame::get_enable_slice_status()
     return enable;
 }
 
+PrintSelectType get_print_select_type()
+{
+    return m_print_select;
+}
+
 bool MainFrame::get_enable_print_status()
 {
     bool enable = true;
@@ -2010,9 +2039,9 @@ void MainFrame::update_side_button_style()
     m_slice_btn->SetExtraSize(wxSize(FromDIP(38), FromDIP(10)));
     m_slice_btn->SetBottomColour(wxColour(0x3B4446));*/
     StateColor m_btn_bg_enable = StateColor(
-        std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed), 
+        std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed), 
         std::pair<wxColour, int>(wxColour(48, 221, 112), StateColor::Hovered),
-        std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal)
+        std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal)
     );
 
     // m_publish_btn->SetMinSize(wxSize(FromDIP(125), FromDIP(24)));
@@ -3937,7 +3966,7 @@ SettingsDialog::SettingsDialog(MainFrame* mainframe)
         SetIcon(wxIcon(szExeFileName, wxBITMAP_TYPE_ICO));
     }
 #else
-    SetIcon(wxIcon(var("OrcaSlicer_128px.png"), wxBITMAP_TYPE_PNG));
+    SetIcon(wxIcon(var("SovolSlicer_128px.png"), wxBITMAP_TYPE_PNG));
 #endif // _WIN32
 
     //just hide the Frame on closing

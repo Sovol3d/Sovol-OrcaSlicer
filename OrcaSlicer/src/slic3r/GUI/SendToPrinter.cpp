@@ -188,7 +188,7 @@ SendToPrinterDialog::SendToPrinterDialog(Plater *plater)
     SetFont(wxGetApp().normal_font());
 
     // icon
-    std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+    std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
     SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
     Freeze();
@@ -251,8 +251,8 @@ SendToPrinterDialog::SendToPrinterDialog(Plater *plater)
     m_comboBox_printer->Bind(wxEVT_COMBOBOX, &SendToPrinterDialog::on_selection_changed, this);
 
     m_sizer_printer->Add(m_comboBox_printer, 1, wxEXPAND | wxRIGHT, FromDIP(5));
-    btn_bg_enable = StateColor(std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed), std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
-                               std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal));
+    btn_bg_enable = StateColor(std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed), std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered),
+                               std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal));
 
     m_button_refresh = new Button(this, _L("Refresh"));
     m_button_refresh->SetBackgroundColor(btn_bg_enable);
@@ -318,7 +318,7 @@ SendToPrinterDialog::SendToPrinterDialog(Plater *plater)
 
     m_statictext_finish = new wxStaticText(m_panel_finish, wxID_ANY, L("send completed"), wxDefaultPosition, wxDefaultSize, 0);
     m_statictext_finish->Wrap(-1);
-    m_statictext_finish->SetForegroundColour(wxColour(0, 150, 136));
+    m_statictext_finish->SetForegroundColour(wxColour(0, 155, 185));
     m_sizer_finish_h->Add(m_statictext_finish, 0, wxALIGN_CENTER | wxALL, FromDIP(5));
 
     m_sizer_finish_v->Add(m_sizer_finish_h, 1, wxALIGN_CENTER, 0);
@@ -758,12 +758,12 @@ void SendToPrinterDialog::on_ok(wxCommandEvent &event)
         return;
     }
 
-   /* std::string  file_name       = "";
+    std::string  file_name       = "";
 	auto default_output_file    = wxGetApp().plater()->get_export_gcode_filename(".3mf");
     if (!default_output_file.empty()) {
 		fs::path default_output_file_path = boost::filesystem::path(default_output_file.c_str());
 		file_name = default_output_file_path.filename().string();
-    }*/
+    }
     
 
 
@@ -1206,7 +1206,7 @@ void SendToPrinterDialog::show_status(PrintDialogStatus status, std::vector<wxSt
 		Enable_Refresh_Button(true);
     }
     else if (status == PrintDialogStatus::PrintStatusNotOnTheSameLAN) {
-        wxString msg_text = _L("The printer is required to be in the same LAN as Orca Slicer.");
+        wxString msg_text = _L("The printer is required to be in the same LAN as Sovol Slicer.");
         update_print_status_msg(msg_text, true, true);
         Enable_Send_Button(false);
         Enable_Refresh_Button(true);

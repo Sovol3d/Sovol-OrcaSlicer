@@ -347,7 +347,7 @@ public:
 
 		// Based on Text
         memDc.SetFont(m_constant_text.based_on_font);
-        auto bs_version = wxString::Format("Based on PrusaSlicer and BambuStudio").ToStdString();
+        auto bs_version = wxString::Format("Based on OrcaSlicer and PrusaSlicer and BambuStudio").ToStdString();
         wxSize based_on_ext = memDc.GetTextExtent(bs_version);
         wxRect based_on_rect(
 			wxPoint(0, height - based_on_ext.GetHeight() * 2),
@@ -746,13 +746,13 @@ static void generic_exception_handle()
      } catch (const boost::io::bad_format_string& ex) {
      	BOOST_LOG_TRIVIAL(error) << boost::format("Uncaught exception: %1%") % ex.what();
         	flush_logs();
-        wxString errmsg = _L("OrcaSlicer will terminate because of a localization error. "
+        wxString errmsg = _L("SovolSlicer will terminate because of a localization error. "
                              "It will be appreciated if you report the specific scenario this issue happened.");
         wxMessageBox(errmsg + "\n\n" + wxString(ex.what()), _L("Critical error"), wxOK | wxICON_ERROR);
         std::terminate();
         //throw;
     } catch (const std::exception& ex) {
-        wxLogError(format_wxstr(_L("OrcaSlicer got an unhandled exception: %1%"), ex.what()));
+        wxLogError(format_wxstr(_L("SovolSlicer got an unhandled exception: %1%"), ex.what()));
         BOOST_LOG_TRIVIAL(error) << boost::format("Uncaught exception: %1%") % ex.what();
         flush_logs();
         throw;
@@ -1915,7 +1915,7 @@ void GUI_App::init_webview_runtime()
 {
     // Check WebView Runtime
     if (!WebView::CheckWebViewRuntime()) {
-        int nRet = wxMessageBox(_L("Orca Slicer requires the Microsoft WebView2 Runtime to operate certain features.\nClick Yes to install it now."),
+        int nRet = wxMessageBox(_L("Sovol Slicer requires the Microsoft WebView2 Runtime to operate certain features.\nClick Yes to install it now."),
                                 _L("WebView2 Runtime"), wxYES_NO);
         if (nRet == wxYES) {
             WebView::DownloadAndInstallWebViewRuntime();
@@ -2259,7 +2259,7 @@ bool GUI_App::on_init_inner()
     }
 #endif
 
-    BOOST_LOG_TRIVIAL(info) << boost::format("gui mode, Current OrcaSlicer Version %1%")%SoftFever_VERSION;
+    BOOST_LOG_TRIVIAL(info) << boost::format("gui mode, Current SovolSlicer Version %1%")%SoftFever_VERSION;
     // Enable this to get the default Win32 COMCTRL32 behavior of static boxes.
 //    wxSystemOptions::SetOption("msw.staticbox.optimized-paint", 0);
     // Enable this to disable Windows Vista themes for all wxNotebooks. The themes seem to lead to terrible
@@ -2457,7 +2457,7 @@ bool GUI_App::on_init_inner()
                 wxString tips = wxString::Format(_L("Click to download new version in default browser: %s"), version_str);
                 DownloadDialog dialog(this->mainframe,
                     tips,
-                    _L("The Orca Slicer needs an upgrade"),
+                    _L("The Sovol Slicer needs an upgrade"),
                     false,
                     wxCENTER | wxICON_INFORMATION);
                 dialog.SetExtendedMessage(description_text);
@@ -2678,7 +2678,7 @@ bool GUI_App::on_init_inner()
         m_config_corrupted = false;
         show_error(nullptr,
                    _u8L(
-                       "The OrcaSlicer configuration file may be corrupted and cannot be parsed.\nOrcaSlicer has attempted to recreate the "
+                       "The SovolSlicer configuration file may be corrupted and cannot be parsed.\nSovolSlicer has attempted to recreate the "
                        "configuration file.\nPlease note, application settings will be lost, but printer profiles will not be affected."));
     }
     return true;
@@ -4067,7 +4067,7 @@ void GUI_App::on_http_error(wxCommandEvent &evt)
 
     // Version limit
     if (code == HttpErrorVersionLimited) {
-        MessageDialog msg_dlg(nullptr, _L("The version of Orca Slicer is too low and needs to be updated to the latest version before it can be used normally"), "", wxAPPLY | wxOK);
+        MessageDialog msg_dlg(nullptr, _L("The version of Sovol Slicer is too low and needs to be updated to the latest version before it can be used normally"), "", wxAPPLY | wxOK);
         if (msg_dlg.ShowModal() == wxOK) {
         }
 

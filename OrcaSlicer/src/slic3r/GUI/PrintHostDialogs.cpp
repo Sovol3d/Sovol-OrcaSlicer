@@ -156,7 +156,7 @@ void PrintHostSendDialog::init()
     //         });
     // }
 
-    if (post_actions.has(PrintHostPostUploadAction::StartPrint)) {
+    if (post_actions.has(PrintHostPostUploadAction::StartPrint) && !path.extension("3mf")) {
         auto* btn_print = add_button(wxID_YES, false, _L("Upload and Print"));
         btn_print->Bind(wxEVT_BUTTON, [this, validate_path](wxCommandEvent&) {
             if (validate_path(txt_filename->GetValue())) {

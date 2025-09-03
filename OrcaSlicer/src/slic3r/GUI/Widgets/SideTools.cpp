@@ -504,7 +504,7 @@ void SideTools::show_status(int status)
             m_hyperlink->SetLabel(_L("Failed to connect to the printer"));
             update_connect_err_info(BAMBU_NETWORK_ERR_CONNECTION_TO_PRINTER_FAILED,
                 _L("Connection to printer failed"),
-                _L("Please check the network connection of the printer and Orca."));
+                _L("Please check the network connection of the printer and Sovol."));
         }
 
         m_hyperlink->Show();
@@ -523,8 +523,10 @@ void SideTools::show_status(int status)
     else if ((status & (int)MonitorStatus::MONITOR_CONNECTING) != 0) {
         m_hyperlink->Hide();
         m_connection_info->SetLabel(_L("Connecting..."));
-        m_connection_info->SetBackgroundColor(0x009688);
-        m_connection_info->SetBorderColor(0x009688);
+        // m_connection_info->SetBackgroundColor(0x009688);
+        // m_connection_info->SetBorderColor(0x009688);
+        m_connection_info->SetBackgroundColor(0x009bb9);
+        m_connection_info->SetBorderColor(0x009bb9);
         m_connection_info->Show();
         m_more_button->Hide();
         m_side_error_panel->Hide();

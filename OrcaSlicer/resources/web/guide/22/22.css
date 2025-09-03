@@ -34,7 +34,8 @@ input
 {
 	flex: 0 0 40px;
 	height:40px;
-	border-top: 1px solid #009688;
+	/* border-top: 1px solid #009688; */
+	border-top: 1px solid #009bb9;
 	display: flex;
 	align-items: center;
 }
@@ -93,7 +94,7 @@ input
 
 #NoticeBar
 {
-	background-color:#00f0d8;
+	background-color:#00f5ff;
 	height: 40px;
 	line-height: 40px;
 	color: #fff;

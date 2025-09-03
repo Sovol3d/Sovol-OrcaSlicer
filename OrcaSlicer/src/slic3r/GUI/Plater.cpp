@@ -905,8 +905,8 @@ Sidebar::Sidebar(Plater *parent)
                             std::pair<wxColour, int>(wxColour(107, 107, 106), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(107, 107, 106), StateColor::Normal));
 
-    StateColor flush_bd_col(std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Pressed),
-                            std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Hovered),
+    StateColor flush_bd_col(std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Pressed),
+                            std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(172, 172, 172), StateColor::Normal));
 
     p->m_flushing_volume_btn->SetBackgroundColor(flush_bg_col);
@@ -1838,7 +1838,7 @@ void Sidebar::sync_ams_list()
     wxGetApp().app_config ->set("ams_filament_ids", p->ams_list_device, ams_filament_ids);
     if (unknowns > 0) {
         MessageDialog dlg(this,
-            _L("There are some unknown filaments mapped to generic preset. Please update Orca Slicer or restart Orca Slicer to check if there is an update to system presets."),
+            _L("There are some unknown filaments mapped to generic preset. Please update Sovol Slicer or restart Sovol Slicer to check if there is an update to system presets."),
             _L("Sync filaments with AMS"), wxOK);
         dlg.ShowModal();
     }
@@ -3822,7 +3822,7 @@ std::vector<size_t> Plater::priv::load_files(const std::vector<fs::path>& input_
                         // do not reset the model config
                         load_config = false;
                         if(load_type != LoadType::LoadGeometry)
-                            show_info(q, _L("The 3mf is not supported by OrcaSlicer, load geometry data only."), _L("Load 3mf"));
+                            show_info(q, _L("The 3mf is not supported by SovolSlicer, load geometry data only."), _L("Load 3mf"));
                     }
                     // else if (load_config && (file_version.maj() != app_version.maj())) {
                     //     // version mismatch, only load geometries
@@ -7777,7 +7777,7 @@ void Plater::priv::set_project_name(const wxString& project_name)
     m_project_name = project_name;
     //update topbar title
 #ifdef __WINDOWS__
-    wxGetApp().mainframe->SetTitle(m_project_name + " - OrcaSlicer");
+    wxGetApp().mainframe->SetTitle(m_project_name + " - SovolSlicer");
     wxGetApp().mainframe->topbar()->SetTitle(m_project_name);
 #else
     wxGetApp().mainframe->SetTitle(m_project_name);
@@ -9286,7 +9286,7 @@ void Plater::import_model_id(wxString download_info)
                         error);
 
                     if (retry_count == max_retries) {
-                        msg = _L("Importing to Orca Slicer failed. Please download the file and manually import it.");
+                        msg = _L("Importing to Sovol Slicer failed. Please download the file and manually import it.");
                         cont = false;
                     }
                 })
@@ -10596,7 +10596,7 @@ ProjectDropDialog::ProjectDropDialog(const std::string &filename)
     SetBackgroundColour(m_def_color);
 
     // icon
-    std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+    std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
     SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
     wxBoxSizer *m_sizer_main = new wxBoxSizer(wxVERTICAL);
@@ -10682,11 +10682,11 @@ ProjectDropDialog::ProjectDropDialog(const std::string &filename)
     wxBoxSizer *m_sizer_right  = new wxBoxSizer(wxHORIZONTAL);
 
     m_confirm = new Button(this, _L("OK"));
-    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed), std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
-                            std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal));
+    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed), std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered),
+                            std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal));
 
     m_confirm->SetBackgroundColor(btn_bg_green);
-    m_confirm->SetBorderColor(wxColour(0, 150, 136));
+    m_confirm->SetBorderColor(wxColour(0, 155, 185));
     m_confirm->SetTextColor(wxColour("#FFFFFE"));
     m_confirm->SetSize(PROJECT_DROP_DIALOG_BUTTON_SIZE);
     m_confirm->SetMinSize(PROJECT_DROP_DIALOG_BUTTON_SIZE);
@@ -14382,7 +14382,7 @@ void Plater::show_object_info()
 
     #ifndef __WINDOWS__
     if (non_manifold_edges > 0) {
-        info_manifold += into_u8("\n" + _L("Tips:") + "\n" +_L("\"Fix Model\" feature is currently only on Windows. Please repair the model on Orca Slicer(windows) or CAD softwares."));
+        info_manifold += into_u8("\n" + _L("Tips:") + "\n" +_L("\"Fix Model\" feature is currently only on Windows. Please repair the model on Sovol Slicer(windows) or CAD softwares."));
     }
     #endif //APPLE & LINUX
 

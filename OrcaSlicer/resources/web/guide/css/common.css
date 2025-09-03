@@ -73,7 +73,8 @@ body
 {
 	font-size:28px;
 	line-height: 28px;
-	color: #009688;
+	/* color: #009688; */
+	color: #009bb9;
 	padding: 0px 10mm;
 }
 
@@ -116,7 +117,8 @@ body
 	padding: 3mm 9mm;
 	font-size: 14px;
 	text-align: center;
-	background-color: #009688;
+	/* background-color: #009688; */
+	background-color: #009bb9;
 	border-radius: 16px;
 	color: #fff;
 	cursor: pointer;
@@ -168,7 +170,8 @@ body
 	padding: 2px 4mm;
 	font-size: 14px;
 	text-align: center;
-	background-color: #009688;
+	/* background-color: #009688; */
+	background-color: #009bb9;
 	border-radius: 6px;
 	color: #fff;
 	cursor: pointer;
@@ -183,7 +186,8 @@ body
 /*---HyperLink---*/
 .HyperLink
 {
-	color: #009688;
+	/* color: #009688; */
+	color: #009bb9;
 	text-decoration: underline;
     font-weight: 700;
 	cursor: pointer;

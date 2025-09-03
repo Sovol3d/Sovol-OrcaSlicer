@@ -63,7 +63,7 @@ PingCodeBindDialog::PingCodeBindDialog(Plater* plater /*= nullptr*/)
     wxBoxSizer* sizer_main = new wxBoxSizer(wxVERTICAL);
 
  
-    std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+    std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
     SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
     SetBackgroundColour(*wxWHITE);
@@ -139,9 +139,9 @@ PingCodeBindDialog::PingCodeBindDialog(Plater* plater /*= nullptr*/)
     m_button_bind = new Button(request_bind_panel, _L("Confirm"));
 
     StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(206, 206, 206), StateColor::Disabled),
-        std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed),
-        std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
-        std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal));
+        std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed),
+        std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered),
+        std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal));
     m_button_bind->SetBackgroundColor(btn_bg_green);
     m_button_bind->SetBorderColor(*wxWHITE);
     m_button_bind->SetTextColor(wxColour("#FFFFFE"));
@@ -358,7 +358,7 @@ PingCodeBindDialog::~PingCodeBindDialog() {
 
      m_tocken.reset(new int(0));
 
-     std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+     std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
      SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
      SetBackgroundColour(*wxWHITE);
@@ -482,7 +482,8 @@ PingCodeBindDialog::~PingCodeBindDialog() {
      m_link_Terms_title->SetFont(Label::Head_13);
      m_link_Terms_title->SetMaxSize(wxSize(FromDIP(450), -1));
      m_link_Terms_title->Wrap(FromDIP(450));
-     m_link_Terms_title->SetForegroundColour(wxColour(0x009688));
+    //  m_link_Terms_title->SetForegroundColour(wxColour(0x009688));
+     m_link_Terms_title->SetForegroundColour(wxColour(0x009bb9));
      m_link_Terms_title->Bind(wxEVT_LEFT_DOWN, [this](auto& e) {
          wxString txt = _L("Thank you for purchasing a Bambu Lab device.Before using your Bambu Lab device, please read the terms and conditions.By clicking to agree to use your Bambu Lab device, you agree to abide by the Privacy Policy and Terms of Use(collectively, the \"Terms\"). If you do not comply with or agree to the Bambu Lab Privacy Policy, please do not use Bambu Lab equipment and services.");
          ConfirmBeforeSendDialog confirm_dlg(this, wxID_ANY, _L("Terms and Conditions"), ConfirmBeforeSendDialog::ButtonStyle::ONLY_CONFIRM);
@@ -501,7 +502,8 @@ PingCodeBindDialog::~PingCodeBindDialog() {
      m_link_privacy_title->SetFont(Label::Head_13);
      m_link_privacy_title->SetMaxSize(wxSize(FromDIP(450), -1));
      m_link_privacy_title->Wrap(FromDIP(450));
-     m_link_privacy_title->SetForegroundColour(wxColour(0x009688));
+    //  m_link_privacy_title->SetForegroundColour(wxColour(0x009688));
+     m_link_privacy_title->SetForegroundColour(wxColour(0x009bb9));
      m_link_privacy_title->Bind(wxEVT_LEFT_DOWN, [this](auto& e) {
          std::string url;
          std::string country_code = Slic3r::GUI::wxGetApp().app_config->get_country_code();
@@ -541,7 +543,8 @@ PingCodeBindDialog::~PingCodeBindDialog() {
      m_link_notice_title->SetFont(Label::Head_13);
      m_link_notice_title->SetMaxSize(wxSize(FromDIP(450), -1));
      m_link_notice_title->Wrap(FromDIP(450));
-     m_link_notice_title->SetForegroundColour(wxColour(0x009688));
+    //  m_link_notice_title->SetForegroundColour(wxColour(0x009688));
+     m_link_notice_title->SetForegroundColour(wxColour(0x009bb9));
      m_link_notice_title->Bind(wxEVT_ENTER_WINDOW, [this](auto& e) {SetCursor(wxCURSOR_HAND); });
      m_link_notice_title->Bind(wxEVT_LEAVE_WINDOW, [this](auto& e) {SetCursor(wxCURSOR_ARROW); });
      m_link_notice_title->Bind(wxEVT_LEFT_DOWN, [this](auto& e) {
@@ -680,9 +683,9 @@ PingCodeBindDialog::~PingCodeBindDialog() {
      m_button_bind = new Button(button_panel, _L("Confirm"));
 
      StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(206, 206, 206), StateColor::Disabled),
-         std::pair<wxColour, int>(wxColour(0, 137, 123), StateColor::Pressed),
-         std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
-         std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal));
+         std::pair<wxColour, int>(wxColour(0, 142, 172), StateColor::Pressed),
+         std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered),
+         std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal));
      m_button_bind->SetBackgroundColor(btn_bg_green);
      m_button_bind->SetBorderColor(*wxWHITE);
      m_button_bind->SetTextColor(wxColour("#FFFFFE"));
@@ -957,7 +960,7 @@ UnBindMachineDialog::UnBindMachineDialog(Plater *plater /*= nullptr*/)
      : DPIDialog(static_cast<wxWindow *>(wxGetApp().mainframe), wxID_ANY, _L("Log out printer"), wxDefaultPosition, wxDefaultSize, wxCAPTION)
  {
     m_tocken.reset(new int(0));
-std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resources_dir()).str();
+std::string icon_path = (boost::format("%1%/images/SovolSlicerTitle.ico") % resources_dir()).str();
      SetIcon(wxIcon(encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
 
      SetBackgroundColour(*wxWHITE);
@@ -1030,10 +1033,10 @@ std::string icon_path = (boost::format("%1%/images/OrcaSlicerTitle.ico") % resou
 
      m_sizer_button->Add(0, 0, 1, wxEXPAND, 5);
      m_button_unbind = new Button(this, _L("Confirm"));
-     StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(38, 166, 154), StateColor::Hovered),
-                             std::pair<wxColour, int>(wxColour(0, 150, 136), StateColor::Normal));
+     StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(38, 171, 203), StateColor::Hovered),
+                             std::pair<wxColour, int>(wxColour(0, 155, 185), StateColor::Normal));
      m_button_unbind->SetBackgroundColor(btn_bg_green);
-     m_button_unbind->SetBorderColor(wxColour(0, 150, 136));
+     m_button_unbind->SetBorderColor(wxColour(0, 155, 185));
      m_button_unbind->SetTextColor(wxColour("#FFFFFE"));
      m_button_unbind->SetSize(BIND_DIALOG_BUTTON_SIZE);
      m_button_unbind->SetMinSize(BIND_DIALOG_BUTTON_SIZE);
