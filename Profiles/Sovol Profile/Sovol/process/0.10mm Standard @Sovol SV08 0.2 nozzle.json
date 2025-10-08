@@ -1,7 +1,7 @@
 {
 	"type": "process",
 	"setting_id": "GP004",
-	"name": "0.10mm Standard @SOVOL SV08 0.2 nozzle",
+	"name": "0.10mm Standard @Sovol SV08 0.2 nozzle",
 	"from": "system",
 	"inherits": "fdm_process_common",
 	"instantiation": "true",
@@ -116,6 +116,6 @@
 	"slow_down_layers": "3",
 	"post_process": [],
 	"compatible_printers": [
-		"SOVOL SV08 0.2 nozzle"
+		"Sovol SV08 0.2 nozzle"
 	]
 }
